@@ -18,12 +18,12 @@ public class Factura {
 	@GeneratedValue
 	private int codigo;
 	private String numero;
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="codigo_cliente")
 	private Cliente cliente;
 	private double total;
 	private Date fechaEmision;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "codigo_factura")
 	private List<DetalleFactura> detalles;
 
