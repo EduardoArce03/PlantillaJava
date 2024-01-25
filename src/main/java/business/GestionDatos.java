@@ -39,12 +39,14 @@ public class GestionDatos {
 		clienteDAO.insert(cliente);
 		
 		Factura factura = new Factura();
+		factura.setCodigo(20);
 		factura.setCliente(cliente);
 		factura.setNumero("001-001-00000001");
 		factura.setFechaEmision(new Date());
 		factura.setTotal(1000.52);
 		
 		DetalleFactura det = new DetalleFactura();
+		det.setCodigo(1);
 		det.setNombre("TV");
 		det.setCantidad(2);
 		det.setPrecio(150.5);
@@ -52,11 +54,13 @@ public class GestionDatos {
 		factura.addDetalle(det);
 		
 		det = new DetalleFactura();
+		det.setCodigo(10);
 		det.setNombre("Cocina");
 		det.setCantidad(1);
 		det.setPrecio(150.5);
 		
 		factura.addDetalle(det);
+		
 		
 		facturaDAO.insert(factura);
 		

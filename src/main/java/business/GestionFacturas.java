@@ -7,6 +7,7 @@ import dao.FacturaDAO;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import model.Cliente;
+import model.DetalleFactura;
 import model.Factura;
 @Stateless
 public class GestionFacturas {
@@ -44,6 +45,10 @@ public class GestionFacturas {
 	
 	public List<Factura> getFacturas(){
 		return facturaDAO.getAll();
+	}
+	
+	public List<DetalleFactura> getDetalles(){
+		return facturaDAO.getDetalles();
 	}
 
 }
