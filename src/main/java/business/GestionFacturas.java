@@ -15,6 +15,7 @@ public class GestionFacturas {
 	private FacturaDAO facturaDAO;
 	private ClienteDAO clienteDAO;
 	public void guardarFactura(Factura factura) {
+		
 		Factura fac = facturaDAO.read(factura.getCodigo());
 		if(fac != null) {
 			facturaDAO.update(factura);

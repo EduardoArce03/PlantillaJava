@@ -9,6 +9,7 @@ public class Cliente {
 	private String dni;
 	private String nombre;
 	private String direccion;
+	private double saldo;
 	
 	public int getCodigo() {
 		return codigo;
@@ -33,6 +34,13 @@ public class Cliente {
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 	@Override
 	public String toString() {

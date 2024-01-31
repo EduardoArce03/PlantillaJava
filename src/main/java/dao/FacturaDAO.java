@@ -33,6 +33,7 @@ public class FacturaDAO {
 		return factura;
 	}
 	
+	
 	public List<Factura> getAll(){
 		String jpql = "SELECT c FROM Factura c";
 		Query q = em.createQuery(jpql, Factura.class);

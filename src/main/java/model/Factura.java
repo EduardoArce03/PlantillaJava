@@ -30,82 +30,58 @@ public class Factura {
 	@Column(name="fecha")
 	private Date fechaEmision;
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<DetalleFactura> detalles;
-
-
+	private List<DetalleFactura> detalle;
 	public int getCodigo() {
 		return codigo;
 	}
-
-
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-
-
 	public String getNumero() {
 		return numero;
 	}
-
-
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-
-
 	public Cliente getCliente() {
 		return cliente;
 	}
-
-
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-
 	public double getTotal() {
 		return total;
 	}
-
-
 	public void setTotal(double total) {
 		this.total = total;
 	}
-
-
 	public Date getFechaEmision() {
 		return fechaEmision;
 	}
-
-
 	public void setFechaEmision(Date fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
-
-
-	public List<DetalleFactura> getDetalles() {
-		return detalles;
+	public List<DetalleFactura> getDetalle() {
+		return detalle;
 	}
-
-
-	public void setDetalles(List<DetalleFactura> detalles) {
-		this.detalles = detalles;
+	public void setDetalle(List<DetalleFactura> detalle) {
+		this.detalle = detalle;
 	}
-	
-	public void addDetalle(DetalleFactura detalle) {
-		if(detalles == null) {
-			detalles = new ArrayList<DetalleFactura>();
-			
+	public void addDetalle(DetalleFactura det) {
+		if(detalle == null) {
+			detalle = new ArrayList<DetalleFactura>();
 		}
-		detalles.add(detalle);
+		detalle.add(det);
 	}
-
-
 	@Override
 	public String toString() {
 		return "Factura [codigo=" + codigo + ", numero=" + numero + ", cliente=" + cliente + ", total=" + total
-				+ ", fechaEmision=" + fechaEmision + ", detalles=" + detalles + "]";
+				+ ", fechaEmision=" + fechaEmision + ", detalle=" + detalle + "]";
 	}
+	
+	
+
+
 	
 	
 }
